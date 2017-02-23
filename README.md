@@ -39,6 +39,22 @@ Or if you prefer, edit `composer.json` manually:
 }
 ```
 
+### To use this forked version with composer
+
+We need to edit `composer.json` of our laravel/lumen project as per below:
+
+```
+"repositories": [
+    {
+		"type": "vcs",
+		"url": "https://github.com/kayrules/lumen-passport.git"
+    }
+],
+"require": {
+	"dusterio/lumen-passport": "dev-master"
+},
+```
+
 ### Modify the bootstrap flow (```bootstrap/app.php``` file)
 
 We need to enable both Laravel Passport provider and Lumen-specific provider:
