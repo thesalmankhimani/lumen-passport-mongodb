@@ -76,18 +76,18 @@ Adding this service provider, will mount the following routes:
 
 Verb | Path | NamedRoute | Controller | Action | Middleware
 --- | --- | --- | --- | --- | ---
-POST   | /oauth/token                             |            | \Laravel\Passport\Http\Controllers\AccessTokenController           | issueToken | -
-GET    | /oauth/tokens                            |            | \Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController | forUser    | auth
-DELETE | /oauth/tokens/{token_id}                 |            | \Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController | destroy    | auth
-POST   | /oauth/token/refresh                     |            | \Laravel\Passport\Http\Controllers\TransientTokenController        | refresh    | auth
-GET    | /oauth/clients                           |            | \Laravel\Passport\Http\Controllers\ClientController                | forUser    | auth
-POST   | /oauth/clients                           |            | \Laravel\Passport\Http\Controllers\ClientController                | store      | auth
-PUT    | /oauth/clients/{client_id}               |            | \Laravel\Passport\Http\Controllers\ClientController                | update     | auth
-DELETE | /oauth/clients/{client_id}               |            | \Laravel\Passport\Http\Controllers\ClientController                | destroy    | auth
-GET    | /oauth/scopes                            |            | \Laravel\Passport\Http\Controllers\ScopeController                 | all        | auth
-GET    | /oauth/personal-access-tokens            |            | \Laravel\Passport\Http\Controllers\PersonalAccessTokenController   | forUser    | auth
-POST   | /oauth/personal-access-tokens            |            | \Laravel\Passport\Http\Controllers\PersonalAccessTokenController   | store      | auth
-DELETE | /oauth/personal-access-tokens/{token_id} |            | \Laravel\Passport\Http\Controllers\PersonalAccessTokenController   | destroy    | auth
+POST   | /api/oauth/token                             |            | \Laravel\Passport\Http\Controllers\AccessTokenController           | issueToken | -
+GET    | /api/oauth/tokens                            |            | \Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController | forUser    | auth
+DELETE | /api/oauth/tokens/{token_id}                 |            | \Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController | destroy    | auth
+POST   | /api/oauth/token/refresh                     |            | \Laravel\Passport\Http\Controllers\TransientTokenController        | refresh    | auth
+GET    | /api/oauth/clients                           |            | \Laravel\Passport\Http\Controllers\ClientController                | forUser    | auth
+POST   | /api/oauth/clients                           |            | \Laravel\Passport\Http\Controllers\ClientController                | store      | auth
+PUT    | /api/oauth/clients/{client_id}               |            | \Laravel\Passport\Http\Controllers\ClientController                | update     | auth
+DELETE | /api/oauth/clients/{client_id}               |            | \Laravel\Passport\Http\Controllers\ClientController                | destroy    | auth
+GET    | /api/oauth/scopes                            |            | \Laravel\Passport\Http\Controllers\ScopeController                 | all        | auth
+GET    | /api/oauth/personal-access-tokens            |            | \Laravel\Passport\Http\Controllers\PersonalAccessTokenController   | forUser    | auth
+POST   | /api/oauth/personal-access-tokens            |            | \Laravel\Passport\Http\Controllers\PersonalAccessTokenController   | store      | auth
+DELETE | /api/oauth/personal-access-tokens/{token_id} |            | \Laravel\Passport\Http\Controllers\PersonalAccessTokenController   | destroy    | auth
 
 Please note that some of the Laravel Passport's routes had to 'go away' because they are web-related and rely on sessions (eg. authorise pages). Lumen is an
 API framework so only API-related routes are present.
@@ -138,7 +138,7 @@ There are a couple of extra features that aren't present in Laravel Passport
 
 ### Allowing multiple tokens per client
 
-Sometimes it's handy to allow multiple access tokens per password grant client. Eg. user logs in from several browsers 
+Sometimes it's handy to allow multiple access tokens per password grant client. Eg. user logs in from several browsers
 simultaneously. Currently Laravel Passport does not allow that.
 
 ```php
@@ -158,7 +158,7 @@ Simply do the following in your service provider:
 
 ```php
 // Second parameter is the client Id
-LumenPassport::tokensExpireIn(Carbon::now()->addYears(50), 2); 
+LumenPassport::tokensExpireIn(Carbon::now()->addYears(50), 2);
 ```
 
 If you don't specify client Id, it will simply fall back to Laravel Passport implementation.
