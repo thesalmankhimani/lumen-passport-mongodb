@@ -58,11 +58,11 @@ class PassportServiceProvider extends ServiceProvider
      */
     public function forAccessTokens()
     {
-        $this->app->post('/oauth/token', [
+        $this->app->post('/api/oauth/token', [
             'uses' => '\Dusterio\LumenPassport\Http\Controllers\AccessTokenController@issueToken'
         ]);
 
-        $this->app->group(['middleware' => ['auth']], function () {
+        $this->app->group(['prefix' => 'api', 'middleware' => ['auth']], function () {
             $this->app->get('/oauth/tokens', [
                 'uses' => '\Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser',
             ]);
@@ -80,7 +80,7 @@ class PassportServiceProvider extends ServiceProvider
      */
     public function forTransientTokens()
     {
-        $this->app->post('/oauth/token/refresh', [
+        $this->app->post('/api/oauth/token/refresh', [
             'middleware' => ['auth'],
             'uses' => '\Laravel\Passport\Http\Controllers\TransientTokenController@refresh',
         ]);
@@ -93,7 +93,7 @@ class PassportServiceProvider extends ServiceProvider
      */
     public function forClients()
     {
-        $this->app->group(['middleware' => ['auth']], function () {
+        $this->app->group(['prefix' => 'api', 'middleware' => ['auth']], function () {
             $this->app->get('/oauth/clients', [
                 'uses' => '\Laravel\Passport\Http\Controllers\ClientController@forUser',
             ]);
@@ -119,7 +119,7 @@ class PassportServiceProvider extends ServiceProvider
      */
     public function forPersonalAccessTokens()
     {
-        $this->app->group(['middleware' => ['auth']], function () {
+        $this->app->group(['prefix' => 'api', 'middleware' => ['auth']], function () {
             $this->app->get('/oauth/scopes', [
                 'uses' => '\Laravel\Passport\Http\Controllers\ScopeController@all',
             ]);
