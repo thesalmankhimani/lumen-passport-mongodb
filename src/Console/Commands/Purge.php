@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use MoeenBasra\LaravelPassportMongoDB\ClientRepository;
 use Illuminate\Support\Facades\DB;
 use DateTime;
-use Laravel\Passport\Passport;
+use MoeenBasra\LaravelPassportMongoDB\Passport;
 
 class Purge extends Command
 {
