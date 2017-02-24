@@ -4,6 +4,7 @@ namespace Dusterio\LumenPassport\Http\Controllers;
 
 use MoeenBasra\LaravelPassportMongoDB\Passport;
 use MoeenBasra\LaravelPassportMongoDB\Token;
+use MoeenBasra\LaravelPassportMongoDB\Http\Controllers\AccessTokenController;
 use Zend\Diactoros\Response as Psr7Response;
 use Psr\Http\Message\ServerRequestInterface;
 use Dusterio\LumenPassport\LumenPassport;
@@ -12,7 +13,7 @@ use Dusterio\LumenPassport\LumenPassport;
  * Class AccessTokenController
  * @package Dusterio\LumenPassport\Http\Controllers
  */
-class AccessTokenController extends \Laravel\Passport\Http\Controllers\AccessTokenController
+class AccessTokenController extends AccessTokenController
 {
     /**
      * Authorize a client to access the user's account.
