@@ -1,8 +1,8 @@
 <?php
 
-namespace Dusterio\LumenPassport;
+namespace Kayrules\LumenPassport;
 
-use Dusterio\LumenPassport\Console\Commands\Purge;
+use Kayrules\LumenPassport\Console\Commands\Purge;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Connection;
 
@@ -59,7 +59,7 @@ class PassportServiceProvider extends ServiceProvider
     public function forAccessTokens()
     {
         $this->app->post('/api/oauth/token', [
-            'uses' => '\Dusterio\LumenPassport\Http\Controllers\AccessTokenController@issueToken'
+            'uses' => '\Kayrules\LumenPassport\Http\Controllers\AccessTokenController@issueToken'
         ]);
 
         $this->app->group(['prefix' => 'api', 'middleware' => ['auth']], function () {
