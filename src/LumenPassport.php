@@ -2,7 +2,7 @@
 
 namespace Dusterio\LumenPassport;
 
-use Laravel\Passport\Passport;
+use MoeenBasra\LaravelPassportMongoDB\Passport;
 use DateTimeInterface;
 use DateInterval;
 use Carbon\Carbon;
