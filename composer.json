@@ -12,11 +12,17 @@
             "homepage": "https://www.mysenko.com"
         }
     ],
+	"repositories": [
+	    {
+			"type": "vcs",
+			"url": "https://github.com/kayrules/passport.git"
+	    }
+	],
     "require": {
         "php": ">=5.6.4",
         "illuminate/database": "~5.3|~5.4",
         "illuminate/support": "~5.3|~5.4",
-        "bspiritxp/laravel-passport-mongodb": "master"
+        "laravel/passport": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
