@@ -1,17 +1,17 @@
 <?php
 
-namespace Dusterio\LumenPassport\Http\Controllers;
+namespace Kayrules\LumenPassport\Http\Controllers;
 
 use MoeenBasra\LaravelPassportMongoDB\Passport;
 use MoeenBasra\LaravelPassportMongoDB\Token;
 use MoeenBasra\LaravelPassportMongoDB\Http\Controllers\AccessTokenController;
 use Zend\Diactoros\Response as Psr7Response;
 use Psr\Http\Message\ServerRequestInterface;
-use Dusterio\LumenPassport\LumenPassport;
+use Kayrules\LumenPassport\LumenPassport;
 
 /**
  * Class AccessTokenController
- * @package Dusterio\LumenPassport\Http\Controllers
+ * @package Kayrules\LumenPassport\Http\Controllers
  */
 class AccessTokenController extends AccessTokenController
 {

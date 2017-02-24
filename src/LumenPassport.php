@@ -1,6 +1,6 @@
 <?php
 
-namespace Dusterio\LumenPassport;
+namespace Kayrules\LumenPassport;
 
 use MoeenBasra\LaravelPassportMongoDB\Passport;
 use DateTimeInterface;

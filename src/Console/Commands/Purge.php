@@ -1,6 +1,6 @@
 <?php
 
-namespace Dusterio\LumenPassport\Console\Commands;
+namespace Kayrules\LumenPassport\Console\Commands;
 
 use Illuminate\Console\Command;
 use MoeenBasra\LaravelPassportMongoDB\ClientRepository;
