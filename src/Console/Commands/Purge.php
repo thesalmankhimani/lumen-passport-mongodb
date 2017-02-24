@@ -3,7 +3,7 @@
 namespace Dusterio\LumenPassport\Console\Commands;
 
 use Illuminate\Console\Command;
-use Laravel\Passport\ClientRepository;
+use MoeenBasra\LaravelPassportMongoDB\ClientRepository;
 use Illuminate\Support\Facades\DB;
 use DateTime;
 use Laravel\Passport\Passport;
