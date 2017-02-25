@@ -12,10 +12,6 @@ use Illuminate\Database\Connection;
  */
 class PassportServiceProvider extends ServiceProvider
 {
-	/**
-	* Prefix group attribute. Leave blank if you don't need it.
-	*/
-	protected $prefix = 'api';
 
     /**
      * Bootstrap any application services.
@@ -24,6 +20,9 @@ class PassportServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+		$this->app->configure('api');
+		$this->app->register(\MoeenBasra\LaravelPassportMongoDB\PassportServiceProvider::class);
+
         $this->app->singleton(Connection::class, function() {
             return $this->app['db.connection'];
         });
@@ -63,13 +62,13 @@ class PassportServiceProvider extends ServiceProvider
      */
     public function forAccessTokens()
     {
-		$this->app->group(['prefix' => $this->prefix], function () {
+		$this->app->group(['prefix' => config('api.prefix')], function () {
 			$this->app->post('/oauth/token', [
 	            'uses' => '\Kayrules\LumenPassport\Http\Controllers\AccessTokenController@issueToken'
 	        ]);
 		});
 
-        $this->app->group(['prefix' => $this->prefix, 'middleware' => ['auth']], function () {
+        $this->app->group(['prefix' => config('api.prefix'), 'middleware' => ['auth']], function () {
             $this->app->get('/oauth/tokens', [
                 'uses' => '\MoeenBasra\LaravelPassportMongoDB\Http\Controllers\AuthorizedAccessTokenController@forUser',
             ]);
@@ -87,7 +86,7 @@ class PassportServiceProvider extends ServiceProvider
      */
     public function forTransientTokens()
     {
-		$this->app->group(['prefix' => $this->prefix], function () {
+		$this->app->group(['prefix' => config('api.prefix')], function () {
 	        $this->app->post('/oauth/token/refresh', [
 	            'middleware' => ['auth'],
 	            'uses' => '\MoeenBasra\LaravelPassportMongoDB\Http\Controllers\TransientTokenController@refresh',
@@ -102,7 +101,7 @@ class PassportServiceProvider extends ServiceProvider
      */
     public function forClients()
     {
-        $this->app->group(['prefix' => $this->prefix, 'middleware' => ['auth']], function () {
+        $this->app->group(['prefix' => config('api.prefix'), 'middleware' => ['auth']], function () {
             $this->app->get('/oauth/clients', [
                 'uses' => '\MoeenBasra\LaravelPassportMongoDB\Http\Controllers\ClientController@forUser',
             ]);
@@ -128,7 +127,7 @@ class PassportServiceProvider extends ServiceProvider
      */
     public function forPersonalAccessTokens()
     {
-        $this->app->group(['prefix' => $this->prefix, 'middleware' => ['auth']], function () {
+        $this->app->group(['prefix' => config('api.prefix'), 'middleware' => ['auth']], function () {
             $this->app->get('/oauth/scopes', [
                 'uses' => '\MoeenBasra\LaravelPassportMongoDB\Http\Controllers\ScopeController@all',
             ]);
