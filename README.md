@@ -60,8 +60,7 @@ $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
 ]);
 
-// Finally register two service providers - original one and Lumen adapter
-$app->register(MoeenBasra\LaravelPassportMongoDB\PassportServiceProvider::class);
+// Finally register service providers
 $app->register(Kayrules\LumenPassport\PassportServiceProvider::class);
 ```
 
