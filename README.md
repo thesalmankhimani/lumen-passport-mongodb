@@ -1,15 +1,8 @@
-# lumen-passport
-[![Build Status](https://travis-ci.org/kayrules/lumen-passport-mongodb.svg)](https://travis-ci.org/kayrules/lumen-passport-mongodb)
-[![Code Climate](https://codeclimate.com/github/kayrules/lumen-passport-mongodb/badges/gpa.svg)](https://codeclimate.com/github/kayrules/lumen-passport-mongodb/badges)
-[![Total Downloads](https://poser.pugx.org/kayrules/lumen-passport-mongodb/d/total.svg)](https://packagist.org/packages/kayrules/lumen-passport-mongodb)
-[![Latest Stable Version](https://poser.pugx.org/kayrules/lumen-passport-mongodb/v/stable.svg)](https://packagist.org/packages/kayrules/lumen-passport-mongodb)
-[![Latest Unstable Version](https://poser.pugx.org/kayrules/lumen-passport-mongodb/v/unstable.svg)](https://packagist.org/packages/kayrules/lumen-passport-mongodb)
-[![License](https://poser.pugx.org/kayrules/lumen-passport-mongodb/license.svg)](https://packagist.org/packages/kayrules/lumen-passport-mongodb)
+# lumen-passport-mongodb
 
 Making Laravel Passport work with Lumen and MongoDB
 
-This repository was forked from [dusterio/lumen-passport](https://github.com/dusterio/lumen-passport).
-A simple service provider that makes Laravel Passport work with Lumen and MongoDB.
+This repository was forked from [dusterio/lumen-passport](https://github.com/dusterio/lumen-passport) and added  [moeen-basra/laravel-passport-mongodb](https://github.com/moeen-basra/laravel-passport-mongodb) package to make Laravel Passport work with Lumen and MongoDB.
 
 
 ## Dependencies
@@ -29,7 +22,7 @@ Then install Lumen Passport (it will fetch Laravel Passport along):
 
 ```bash
 $ cd lumen-app
-$ composer require kayrules/lumen-passport-mongodb-mongodb
+$ composer require kayrules/lumen-passport-mongodb
 ```
 
 Or if you prefer, edit `composer.json` manually:
@@ -37,7 +30,7 @@ Or if you prefer, edit `composer.json` manually:
 ```json
 {
     "require": {
-        "kayrules/lumen-passport-mongodb-mongodb": "^0.1.7"
+        "kayrules/lumen-passport-mongodb": "^0.1.7"
     }
 }
 ```
@@ -75,23 +68,23 @@ php artisan passport:install
 
 ### Installed routes
 
-Adding this service provider, will mount the following routes:
-You may change the prefix in PassportServiceProvider.
+Adding this service provider, will mount the following routes.
+You may change or remove the `/api` prefix in PassportServiceProvider.
 
 Verb | Path | NamedRoute | Controller | Action | Middleware
 --- | --- | --- | --- | --- | ---
-POST   | /api/oauth/token                             |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\AccessTokenController           | issueToken | -
-GET    | /api/oauth/tokens                            |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\AuthorizedAccessTokenController | forUser    | auth
-DELETE | /api/oauth/tokens/{token_id}                 |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\AuthorizedAccessTokenController | destroy    | auth
-POST   | /api/oauth/token/refresh                     |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\TransientTokenController        | refresh    | auth
-GET    | /api/oauth/clients                           |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\ClientController                | forUser    | auth
-POST   | /api/oauth/clients                           |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\ClientController                | store      | auth
-PUT    | /api/oauth/clients/{client_id}               |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\ClientController                | update     | auth
-DELETE | /api/oauth/clients/{client_id}               |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\ClientController                | destroy    | auth
-GET    | /api/oauth/scopes                            |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\ScopeController                 | all        | auth
-GET    | /api/oauth/personal-access-tokens            |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\PersonalAccessTokenController   | forUser    | auth
-POST   | /api/oauth/personal-access-tokens            |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\PersonalAccessTokenController   | store      | auth
-DELETE | /api/oauth/personal-access-tokens/{token_id} |            | \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\PersonalAccessTokenController   | destroy    | auth
+POST   | /api/oauth/token                             |            | AccessTokenController           | issueToken | -
+GET    | /api/oauth/tokens                            |            | AuthorizedAccessTokenController | forUser    | auth
+DELETE | /api/oauth/tokens/{token_id}                 |            | AuthorizedAccessTokenController | destroy    | auth
+POST   | /api/oauth/token/refresh                     |            | TransientTokenController        | refresh    | auth
+GET    | /api/oauth/clients                           |            | ClientController                | forUser    | auth
+POST   | /api/oauth/clients                           |            | ClientController                | store      | auth
+PUT    | /api/oauth/clients/{client_id}               |            | ClientController                | update     | auth
+DELETE | /api/oauth/clients/{client_id}               |            | ClientController                | destroy    | auth
+GET    | /api/oauth/scopes                            |            | ScopeController                 | all        | auth
+GET    | /api/oauth/personal-access-tokens            |            | PersonalAccessTokenController   | forUser    | auth
+POST   | /api/oauth/personal-access-tokens            |            | PersonalAccessTokenController   | store      | auth
+DELETE | /api/oauth/personal-access-tokens/{token_id} |            | PersonalAccessTokenController   | destroy    | auth
 
 Please note that some of the Laravel Passport's routes had to 'go away' because they are web-related and rely on sessions (eg. authorise pages). Lumen is an
 API framework so only API-related routes are present.
