@@ -136,6 +136,8 @@ return [
 Make sure your user model uses Passport's ```HasApiTokens``` trait, eg.:
 
 ```php
+use MoeenBasra\LaravelPassportMongoDB\HasApiTokens;
+
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
     use HasApiTokens, Authenticatable, Authorizable;
