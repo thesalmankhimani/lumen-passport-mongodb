@@ -1,5 +1,10 @@
 # lumen-passport-mongodb
 
+[![Latest Stable Version](https://poser.pugx.org/kayrules/lumen-passport-mongodb/v/stable.svg)](https://packagist.org/packages/kayrules/lumen-passport-mongodb)
+[![Latest Unstable Version](https://poser.pugx.org/kayrules/lumen-passport-mongodb/v/unstable.svg)](https://packagist.org/packages/kayrules/lumen-passport-mongodb)
+[![License](https://poser.pugx.org/kayrules/lumen-passport-mongodb/license.svg)](https://packagist.org/packages/kayrules/lumen-passport-mongodb)
+
+
 Making Laravel Passport work with Lumen and MongoDB
 
 This repository was forked from [dusterio/lumen-passport](https://github.com/dusterio/lumen-passport) and added  [moeen-basra/laravel-passport-mongodb](https://github.com/moeen-basra/laravel-passport-mongodb) package to make Laravel Passport work with Lumen and MongoDB.
@@ -94,10 +99,12 @@ API framework so only API-related routes are present.
 
 ## Configuration
 
-You may change or remove the `/api` prefix in `.env` file as below:
+Edit config/api.php to change or remove `/api` prefix as below:
 
-```json
-API_PREFIX=api
+```php
+return [
+	'prefix' => env('API_PREFIX', 'api')
+];
 ```
 
 Edit config/auth.php to suit your needs. A simple example:
