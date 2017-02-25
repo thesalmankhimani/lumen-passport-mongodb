@@ -81,25 +81,25 @@ Adding this service provider, will mount the following routes.
 
 Verb | Path | NamedRoute | Controller | Action | Middleware
 --- | --- | --- | --- | --- | ---
-POST   | /api/oauth/token                             |            | AccessTokenController           | issueToken | -
-GET    | /api/oauth/tokens                            |            | AuthorizedAccessTokenController | forUser    | auth
-DELETE | /api/oauth/tokens/{token_id}                 |            | AuthorizedAccessTokenController | destroy    | auth
-POST   | /api/oauth/token/refresh                     |            | TransientTokenController        | refresh    | auth
-GET    | /api/oauth/clients                           |            | ClientController                | forUser    | auth
-POST   | /api/oauth/clients                           |            | ClientController                | store      | auth
-PUT    | /api/oauth/clients/{client_id}               |            | ClientController                | update     | auth
-DELETE | /api/oauth/clients/{client_id}               |            | ClientController                | destroy    | auth
-GET    | /api/oauth/scopes                            |            | ScopeController                 | all        | auth
-GET    | /api/oauth/personal-access-tokens            |            | PersonalAccessTokenController   | forUser    | auth
-POST   | /api/oauth/personal-access-tokens            |            | PersonalAccessTokenController   | store      | auth
-DELETE | /api/oauth/personal-access-tokens/{token_id} |            | PersonalAccessTokenController   | destroy    | auth
+POST   | /oauth/token                             |            | AccessTokenController           | issueToken | -
+GET    | /oauth/tokens                            |            | AuthorizedAccessTokenController | forUser    | auth
+DELETE | /oauth/tokens/{token_id}                 |            | AuthorizedAccessTokenController | destroy    | auth
+POST   | /oauth/token/refresh                     |            | TransientTokenController        | refresh    | auth
+GET    | /oauth/clients                           |            | ClientController                | forUser    | auth
+POST   | /oauth/clients                           |            | ClientController                | store      | auth
+PUT    | /oauth/clients/{client_id}               |            | ClientController                | update     | auth
+DELETE | /oauth/clients/{client_id}               |            | ClientController                | destroy    | auth
+GET    | /oauth/scopes                            |            | ScopeController                 | all        | auth
+GET    | /oauth/personal-access-tokens            |            | PersonalAccessTokenController   | forUser    | auth
+POST   | /oauth/personal-access-tokens            |            | PersonalAccessTokenController   | store      | auth
+DELETE | /oauth/personal-access-tokens/{token_id} |            | PersonalAccessTokenController   | destroy    | auth
 
 Please note that some of the Laravel Passport's routes had to 'go away' because they are web-related and rely on sessions (eg. authorise pages). Lumen is an
 API framework so only API-related routes are present.
 
 ## Configuration
 
-Edit config/api.php to change or remove `/api` prefix as below:
+Edit config/api.php to add prefix to all API endpoints. (Eg: `/api/oauth/token`)
 
 ```php
 return [
