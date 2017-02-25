@@ -9,6 +9,7 @@ This repository was forked from [dusterio/lumen-passport](https://github.com/dus
 
 * PHP >= 5.6.3
 * Lumen >= 5.3
+* jenssegers/mongodb >=3.2
 * moeen-basra/laravel-passport-mongodb >= 1.0
 
 ## Installation via Composer
@@ -30,7 +31,7 @@ Or if you prefer, edit `composer.json` manually:
 ```json
 {
     "require": {
-        "kayrules/lumen-passport-mongodb": "^0.1.7"
+        "kayrules/lumen-passport-mongodb": "^0.2.2"
     }
 }
 ```
@@ -42,6 +43,9 @@ We need to enable both Laravel Passport provider and Lumen-specific provider:
 ```php
 // Enable Facades
 $app->withFacades();
+
+// Register jenssegers/mongodb service provider before `$app->withEloquent()`
+$app->register(Jenssegers\Mongodb\MongodbServiceProvider::class);
 
 // Enable Eloquent
 $app->withEloquent();
@@ -69,7 +73,6 @@ php artisan passport:install
 ### Installed routes
 
 Adding this service provider, will mount the following routes.
-You may change or remove the `/api` prefix in PassportServiceProvider.
 
 Verb | Path | NamedRoute | Controller | Action | Middleware
 --- | --- | --- | --- | --- | ---
@@ -90,6 +93,12 @@ Please note that some of the Laravel Passport's routes had to 'go away' because 
 API framework so only API-related routes are present.
 
 ## Configuration
+
+You may change or remove the `/api` prefix in `.env` file as below:
+
+```json
+API_PREFIX=api
+```
 
 Edit config/auth.php to suit your needs. A simple example:
 

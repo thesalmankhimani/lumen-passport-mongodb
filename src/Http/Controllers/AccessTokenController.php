@@ -4,7 +4,6 @@ namespace Kayrules\LumenPassport\Http\Controllers;
 
 use MoeenBasra\LaravelPassportMongoDB\Passport;
 use MoeenBasra\LaravelPassportMongoDB\Token;
-use MoeenBasra\LaravelPassportMongoDB\Http\Controllers\AccessTokenController;
 use Zend\Diactoros\Response as Psr7Response;
 use Psr\Http\Message\ServerRequestInterface;
 use Kayrules\LumenPassport\LumenPassport;
@@ -13,7 +12,7 @@ use Kayrules\LumenPassport\LumenPassport;
  * Class AccessTokenController
  * @package Kayrules\LumenPassport\Http\Controllers
  */
-class AccessTokenController extends AccessTokenController
+class AccessTokenController extends \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\AccessTokenController
 {
     /**
      * Authorize a client to access the user's account.
