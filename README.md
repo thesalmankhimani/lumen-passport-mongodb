@@ -36,7 +36,7 @@ Or if you prefer, edit `composer.json` manually:
 ```json
 {
     "require": {
-        "kayrules/lumen-passport-mongodb": "^0.2.2"
+        "kayrules/lumen-passport-mongodb": "^0.3.0"
     }
 }
 ```
