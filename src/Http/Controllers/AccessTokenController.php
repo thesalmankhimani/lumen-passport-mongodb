@@ -2,8 +2,8 @@
 
 namespace Kayrules\LumenPassport\Http\Controllers;
 
-use MoeenBasra\LaravelPassportMongoDB\Passport;
-use MoeenBasra\LaravelPassportMongoDB\Token;
+use LucasCardial\LaravelPassportMongoDB\Passport;
+use LucasCardial\LaravelPassportMongoDB\Token;
 use Zend\Diactoros\Response as Psr7Response;
 use Psr\Http\Message\ServerRequestInterface;
 use Kayrules\LumenPassport\LumenPassport;
@@ -12,7 +12,7 @@ use Kayrules\LumenPassport\LumenPassport;
  * Class AccessTokenController
  * @package Kayrules\LumenPassport\Http\Controllers
  */
-class AccessTokenController extends \MoeenBasra\LaravelPassportMongoDB\Http\Controllers\AccessTokenController
+class AccessTokenController extends \LucasCardial\LaravelPassportMongoDB\Http\Controllers\AccessTokenController
 {
     /**
      * Authorize a client to access the user's account.
@@ -62,8 +62,8 @@ class AccessTokenController extends \MoeenBasra\LaravelPassportMongoDB\Http\Cont
     private function makePasswordGrant()
     {
         $grant = new \League\OAuth2\Server\Grant\PasswordGrant(
-            app()->make(\MoeenBasra\LaravelPassportMongoDB\Bridge\UserRepository::class),
-            app()->make(\MoeenBasra\LaravelPassportMongoDB\Bridge\RefreshTokenRepository::class)
+            app()->make(\LucasCardial\LaravelPassportMongoDB\Bridge\UserRepository::class),
+            app()->make(\LucasCardial\LaravelPassportMongoDB\Bridge\RefreshTokenRepository::class)
         );
 
         $grant->setRefreshTokenTTL(Passport::refreshTokensExpireIn());
