@@ -2,7 +2,7 @@
 
 namespace Kayrules\LumenPassport;
 
-use MoeenBasra\LaravelPassportMongoDB\Passport;
+use LucasCardial\LaravelPassportMongoDB\Passport;
 use DateTimeInterface;
 use DateInterval;
 use Carbon\Carbon;
