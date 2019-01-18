@@ -7,7 +7,7 @@
 
 Making Laravel Passport work with Lumen and MongoDB
 
-This repository was forked from [dusterio/lumen-passport](https://github.com/dusterio/lumen-passport) and added  [lucas-cardial/laravel-passport-mongodb](https://github.com/lucas-cardial/laravel-passport-mongodb) package to make Laravel Passport work with Lumen and MongoDB.
+This repository was forked from [dusterio/lumen-passport](https://github.com/dusterio/lumen-passport) and added  [lucas-cardial/laravel-passport-mongodb](https://github.com/lucca-cardial/laravel-passport-mongodb) package to make Laravel Passport work with Lumen and MongoDB.
 
 
 ## Dependencies
