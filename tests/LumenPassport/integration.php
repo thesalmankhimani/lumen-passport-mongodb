@@ -1,16 +1,16 @@
 <?php
 
-namespace Kayrules\LumenPassport\Tests;
+namespace SalKhimani\LumenPassport\Tests;
 
-use Kayrules\LumenPassport\Http\Controllers\AccessTokenController;
-use Kayrules\LumenPassport\LumenPassport;
+use SalKhimani\LumenPassport\Http\Controllers\AccessTokenController;
+use SalKhimani\LumenPassport\LumenPassport;
 use Carbon\Carbon;
 use Laravel\Passport\Passport;
 use Laravel\Passport\PassportServiceProvider;
 
 /**
  * Class IntegrationTest
- * @package Kayrules\LumenPassport\Tests
+ * @package SalKhimani\LumenPassport\Tests
  */
 class IntegrationTest extends \PHPUnit_Framework_TestCase
 {

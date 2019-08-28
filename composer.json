@@ -1,31 +1,40 @@
 {
-    "name": "kayrules/lumen-passport-mongodb",
-    "type": "library",
-    "description": "Making Laravel Passport work with Lumen and MongoDB",
-    "keywords": ["php","lumen","laravel passport", "mongodb"],
-    "homepage": "https://github.com/kayrules/lumen-passport-mongodb",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Mohd Khairulnizam Md Dahari",
-            "email": "kayrules@gmail.com",
-            "homepage": "http://www.kayrules.com"
-        }
-    ],
-    "require": {
-        "php": ">=5.6.4",
-        "illuminate/database": "~5.3|~5.4",
-        "illuminate/support": "~5.3|~5.4",
-        "lucas-cardial/laravel-passport-mongodb": "^0.1.0"
+  "name": "thesalmankhimani/lumen-passport-mongodb",
+  "type": "library",
+  "description": "Making Laravel Passport work with Lumen and MongoDB",
+  "keywords": [
+    "php",
+    "lumen",
+    "laravel passport",
+    "mongodb"
+  ],
+  "homepage": "https://github.com/thesalmankhimani/lumen-passport-mongodb",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Salman Khimani",
+      "email": "sk.salman.khimani@gmail.com"
     },
-    "require-dev": {
-        "fzaninotto/faker": "~1.4",
-        "phpunit/phpunit": "~5.0",
-        "codeclimate/php-test-reporter": "dev-master"
-    },
-    "autoload": {
-        "psr-4": {
-            "Kayrules\\LumenPassport\\": "src/"
-        }
+    {
+      "name": "Mohd Khairulnizam Md Dahari",
+      "email": "kayrules@gmail.com",
+      "homepage": "http://www.kayrules.com"
     }
+  ],
+  "require": {
+    "php": ">=5.6.4",
+    "illuminate/database": "~5.3|~5.4",
+    "illuminate/support": "~5.3|~5.4",
+    "thesalmankhimani/laravel-passport-mongodb": "^0.1.0"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "~1.4",
+    "phpunit/phpunit": "~5.0",
+    "codeclimate/php-test-reporter": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "SalKhimani\\LumenPassport\\": "src/"
+    }
+  }
 }

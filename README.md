@@ -61,7 +61,7 @@ $app->routeMiddleware([
 ]);
 
 // Finally register service providers
-$app->register(Kayrules\LumenPassport\PassportServiceProvider::class);
+$app->register(SalKhimani\LumenPassport\PassportServiceProvider::class);
 ```
 
 ### Migrate and install Laravel Passport
@@ -156,7 +156,7 @@ Sometimes it's handy to allow multiple access tokens per password grant client. 
 simultaneously. Currently Laravel Passport does not allow that.
 
 ```php
-use Kayrules\LumenPassport\LumenPassport;
+use SalKhimani\LumenPassport\LumenPassport;
 
 // Somewhere in your application service provider or bootstrap process
 LumenPassport::allowMultipleTokens();

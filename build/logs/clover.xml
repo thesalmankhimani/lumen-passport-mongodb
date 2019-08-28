@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <coverage generated="1487983198">
   <project timestamp="1487983198">
-    <package name="Kayrules\LumenPassport\Console\Commands">
+    <package name="SalKhimani\LumenPassport\Console\Commands">
       <file name="/home/kayrules/Projects/git-fork/lumen-passport-mongodb/src/Console/Commands/Purge.php">
-        <class name="Purge" namespace="Kayrules\LumenPassport\Console\Commands">
+        <class name="Purge" namespace="SalKhimani\LumenPassport\Console\Commands">
           <metrics complexity="3" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="11" coveredelements="0"/>
         </class>
         <line num="33" type="method" name="handle" visibility="public" complexity="3" crap="12" count="0"/>
@@ -20,9 +20,9 @@
         <metrics loc="48" ncloc="30" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="11" coveredelements="0"/>
       </file>
     </package>
-    <package name="Kayrules\LumenPassport\Http\Controllers">
+    <package name="SalKhimani\LumenPassport\Http\Controllers">
       <file name="/home/kayrules/Projects/git-fork/lumen-passport-mongodb/src/Http/Controllers/AccessTokenController.php">
-        <class name="AccessTokenController" namespace="Kayrules\LumenPassport\Http\Controllers" fullPackage="Kayrules" package="Kayrules">
+        <class name="AccessTokenController" namespace="SalKhimani\LumenPassport\Http\Controllers" fullPackage="SalKhimani" package="SalKhimani">
           <metrics complexity="13" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="0" elements="31" coveredelements="0"/>
         </class>
         <line num="24" type="method" name="issueToken" visibility="public" complexity="7" crap="56" count="0"/>
@@ -73,9 +73,9 @@
         <metrics loc="96" ncloc="70" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="41" coveredstatements="0" elements="45" coveredelements="0"/>
       </file>
     </package>
-    <package name="Kayrules\LumenPassport">
+    <package name="SalKhimani\LumenPassport">
       <file name="/home/kayrules/Projects/git-fork/lumen-passport-mongodb/src/LumenPassport.php">
-        <class name="LumenPassport" namespace="Kayrules\LumenPassport">
+        <class name="LumenPassport" namespace="SalKhimani\LumenPassport">
           <metrics complexity="6" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="0" elements="20" coveredelements="0"/>
         </class>
         <line num="29" type="method" name="allowMultipleTokens" visibility="public" complexity="1" crap="2" count="0"/>
@@ -101,7 +101,7 @@
         <metrics loc="63" ncloc="40" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="0" elements="20" coveredelements="0"/>
       </file>
       <file name="/home/kayrules/Projects/git-fork/lumen-passport-mongodb/src/PassportServiceProvider.php">
-        <class name="PassportServiceProvider" namespace="Kayrules\LumenPassport" fullPackage="App" package="App">
+        <class name="PassportServiceProvider" namespace="SalKhimani\LumenPassport" fullPackage="App" package="App">
           <metrics complexity="9" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="67" coveredstatements="0" elements="75" coveredelements="0"/>
         </class>
         <line num="25" type="method" name="boot" visibility="public" complexity="2" crap="6" count="0"/>

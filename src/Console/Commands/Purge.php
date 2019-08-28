@@ -1,12 +1,12 @@
 <?php
 
-namespace Kayrules\LumenPassport\Console\Commands;
+namespace SalKhimani\LumenPassport\Console\Commands;
 
 use Illuminate\Console\Command;
-use LucasCardial\LaravelPassportMongoDB\ClientRepository;
+use SalKhimani\LaravelPassportMongoDB\ClientRepository;
 use Illuminate\Support\Facades\DB;
 use DateTime;
-use LucasCardial\LaravelPassportMongoDB\Passport;
+use SalKhimani\LaravelPassportMongoDB\Passport;
 
 class Purge extends Command
 {
@@ -27,7 +27,7 @@ class Purge extends Command
     /**
      * Execute the console command.
      *
-     * @param  \LucasCardial\LaravelPassportMongoDB\ClientRepository  $clients
+     * @param  \SalKhimani\LaravelPassportMongoDB\ClientRepository  $clients
      * @return void
      */
     public function handle(ClientRepository $clients)

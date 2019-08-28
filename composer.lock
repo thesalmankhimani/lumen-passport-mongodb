@@ -1202,7 +1202,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "LucasCardial\\LaravelPassportMongoDB\\": "src/"
+                    "SalKhimani\\LaravelPassportMongoDB\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",

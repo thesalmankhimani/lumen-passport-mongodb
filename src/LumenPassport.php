@@ -1,8 +1,8 @@
 <?php
 
-namespace Kayrules\LumenPassport;
+namespace SalKhimani\LumenPassport;
 
-use LucasCardial\LaravelPassportMongoDB\Passport;
+use SalKhimani\LaravelPassportMongoDB\Passport;
 use DateTimeInterface;
 use DateInterval;
 use Carbon\Carbon;
