@@ -1,8 +1,8 @@
 # lumen-passport-mongodb
 
-[![Latest Stable Version](https://poser.pugx.org/kayrules/lumen-passport-mongodb/v/stable.svg)](https://packagist.org/packages/kayrules/lumen-passport-mongodb)
-[![Latest Unstable Version](https://poser.pugx.org/kayrules/lumen-passport-mongodb/v/unstable.svg)](https://packagist.org/packages/kayrules/lumen-passport-mongodb)
-[![License](https://poser.pugx.org/kayrules/lumen-passport-mongodb/license.svg)](https://packagist.org/packages/kayrules/lumen-passport-mongodb)
+[![Latest Stable Version](https://poser.pugx.org/thesalmankhimani/lumen-passport-mongodb/v/stable.svg)](https://packagist.org/packages/thesalmankhimani/lumen-passport-mongodb)
+[![Latest Unstable Version](https://poser.pugx.org/thesalmankhimani/lumen-passport-mongodb/v/unstable.svg)](https://packagist.org/packages/thesalmankhimani/lumen-passport-mongodb)
+[![License](https://poser.pugx.org/thesalmankhimani/lumen-passport-mongodb/license.svg)](https://packagist.org/packages/thesalmankhimani/lumen-passport-mongodb)
 
 
 Making Laravel Passport work with Lumen and MongoDB
