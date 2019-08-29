@@ -7,7 +7,7 @@
 
 Making Laravel Passport work with Lumen and MongoDB
 
-This repository was forked from [dusterio/lumen-passport](https://github.com/dusterio/lumen-passport) and added  [lucas-cardial/laravel-passport-mongodb](https://github.com/lucca-cardial/laravel-passport-mongodb) package to make Laravel Passport work with Lumen and MongoDB.
+This repository was forked from [dusterio/lumen-passport](https://github.com/dusterio/lumen-passport) and added  [thesalmankhimani/laravel-passport-mongodb](https://github.com/thesalmankhimani/laravel-passport-mongodb) package to make Laravel Passport work with Lumen and MongoDB.
 
 
 ## Dependencies
@@ -15,7 +15,7 @@ This repository was forked from [dusterio/lumen-passport](https://github.com/dus
 * PHP >= 5.6.3
 * Lumen >= 5.3
 * jenssegers/mongodb >=3.2
-* lucas-cardial/laravel-passport-mongodb >= 1.0
+* theslamankhimani/laravel-passport-mongodb >= 0.1.0
 
 ## Installation via Composer
 
@@ -28,7 +28,7 @@ Then install Lumen Passport (it will fetch Laravel Passport along):
 
 ```bash
 $ cd lumen-app
-$ composer require kayrules/lumen-passport-mongodb
+$ composer require thesalmankhimani/lumen-passport-mongodb
 ```
 
 Or if you prefer, edit `composer.json` manually:
@@ -36,7 +36,7 @@ Or if you prefer, edit `composer.json` manually:
 ```json
 {
     "require": {
-        "kayrules/lumen-passport-mongodb": "^0.3.0"
+        "thesalmankhimani/lumen-passport-mongodb": "^0.1.0"
     }
 }
 ```
@@ -61,7 +61,8 @@ $app->routeMiddleware([
 ]);
 
 // Finally register service providers
-$app->register(SalKhimani\LumenPassport\PassportServiceProvider::class);
+$app->register(\SalKhimani\LaravelPassportMongoDB\PassportServiceProvider::class);
+$app->register(\SalKhimani\LumenPassport\PassportServiceProvider::class);
 ```
 
 ### Migrate and install Laravel Passport
@@ -80,18 +81,18 @@ Adding this service provider, will mount the following routes.
 
 Verb | Path | NamedRoute | Controller | Action | Middleware
 --- | --- | --- | --- | --- | ---
-POST   | /oauth/token                             |            | AccessTokenController           | issueToken | -
-GET    | /oauth/tokens                            |            | AuthorizedAccessTokenController | forUser    | auth
-DELETE | /oauth/tokens/{token_id}                 |            | AuthorizedAccessTokenController | destroy    | auth
-POST   | /oauth/token/refresh                     |            | TransientTokenController        | refresh    | auth
-GET    | /oauth/clients                           |            | ClientController                | forUser    | auth
-POST   | /oauth/clients                           |            | ClientController                | store      | auth
-PUT    | /oauth/clients/{client_id}               |            | ClientController                | update     | auth
-DELETE | /oauth/clients/{client_id}               |            | ClientController                | destroy    | auth
-GET    | /oauth/scopes                            |            | ScopeController                 | all        | auth
-GET    | /oauth/personal-access-tokens            |            | PersonalAccessTokenController   | forUser    | auth
-POST   | /oauth/personal-access-tokens            |            | PersonalAccessTokenController   | store      | auth
-DELETE | /oauth/personal-access-tokens/{token_id} |            | PersonalAccessTokenController   | destroy    | auth
+POST   | /token                             |            | AccessTokenController           | issueToken | -
+GET    | /tokens                            |            | AuthorizedAccessTokenController | forUser    | auth
+DELETE | /tokens/{token_id}                 |            | AuthorizedAccessTokenController | destroy    | auth
+POST   | /token/refresh                     |            | TransientTokenController        | refresh    | auth
+GET    | /clients                           |            | ClientController                | forUser    | auth
+POST   | /clients                           |            | ClientController                | store      | auth
+PUT    | /clients/{client_id}               |            | ClientController                | update     | auth
+DELETE | /clients/{client_id}               |            | ClientController                | destroy    | auth
+GET    | /scopes                            |            | ScopeController                 | all        | auth
+GET    | /personal-access-tokens            |            | PersonalAccessTokenController   | forUser    | auth
+POST   | /personal-access-tokens            |            | PersonalAccessTokenController   | store      | auth
+DELETE | /personal-access-tokens/{token_id} |            | PersonalAccessTokenController   | destroy    | auth
 
 Please note that some of the Laravel Passport's routes had to 'go away' because they are web-related and rely on sessions (eg. authorise pages). Lumen is an
 API framework so only API-related routes are present.
@@ -102,7 +103,7 @@ Edit config/api.php to add prefix to all API endpoints. (Eg: `/api/oauth/token`)
 
 ```php
 return [
-	'prefix' => env('API_PREFIX', 'api')
+	'prefix' => env('API_OAUTH_PREFIX', 'api/oauth')
 ];
 ```
 
@@ -136,7 +137,7 @@ return [
 Make sure your user model uses Passport's ```HasApiTokens``` trait, eg.:
 
 ```php
-use MoeenBasra\LaravelPassportMongoDB\HasApiTokens;
+use SalKhimani\LaravelPassportMongoDB\HasApiTokens;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
