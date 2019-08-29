@@ -103,7 +103,7 @@ Edit config/api.php to add prefix to all API endpoints. (Eg: `/api/oauth/token`)
 
 ```php
 return [
-	'prefix' => env('API_OAUTH_PREFIX', 'api/oauth')
+	'oauth_prefix' => env('API_OAUTH_PREFIX', 'api/oauth')
 ];
 ```
 
